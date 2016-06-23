@@ -7,3 +7,5 @@ This is a set of tools to handle multiple git repositories such as the repositor
 - Given the paths to such a local set of repositories, use gitpython to verify that none of the local repositories are dirty (ie. non-empty git-diff returns), and return the list of dirty repositories.
 - Given the paths to such a local set of repositories, verify that the repositories are clean and switch to a branch of choice. The default is master, but if a branch name is provided, all repositories should try to switch to this branch. If multiple branches are provided in a list, this should be done in order.
 - eups Declare all of the repositories with a certain tag
+
+Some of these functionalities may be already available as part of other packages, but it seemed useful to haveall of the properties together.
