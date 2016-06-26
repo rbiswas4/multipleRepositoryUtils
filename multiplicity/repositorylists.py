@@ -2,7 +2,7 @@
 module for tools to obtain sequences of directoris that may house repositories
 of interest
 """
-
+from __future__ import absolute_import
 import os
 import git
 
@@ -48,8 +48,11 @@ def remoteChar(gen, likeDesired):
     -------
     """
     for repo in gen:
-        g = git.cmd.Git(repo)
-        remoteString = g.remote(verbose=True)
-        if likeDesired(remoteString):
-            yield repo
+        try:
+            g = git.cmd.Git(repo)
+            remoteString = g.remote(verbose=True)
+            if likeDesired(remoteString):
+                yield repo
+        except:
+            pass
 
