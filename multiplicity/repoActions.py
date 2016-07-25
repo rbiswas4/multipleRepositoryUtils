@@ -4,7 +4,7 @@ return information about them, or to do git operations on the repositories.
 """
 import git
 
-__all__ = ['listDirtyRepos', 'get_remoteURL']
+__all__ = ['listDirtyRepos', 'get_remoteURL', 'switchBranchToMaster']
 def listDirtyRepos(repoPaths):
     """
     return a sequence of dirty repositorieso
@@ -48,3 +48,13 @@ def get_remoteURL(repoPath, remoteName='origin'):
         return None
     url = repo.remotes[remoteName].url
     return url
+
+def switchBranchToMaster(repoPath):
+    try:
+        repo = git.Repo(repoPath)
+    except:
+        print('Not a valid git repository')
+        return None
+    
+
+

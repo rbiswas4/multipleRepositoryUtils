@@ -30,7 +30,7 @@ class LocalLSSTRepos(object):
         return True if local git repository at repoPath satisfies certain
         conditions deemed necessary for being a lsstRepo. Here the conditions
         are that it should have a remote called origin in the github lsst repos
-        'githhub.com/lsst'
+        'githhub.com/lsst' and that it has a ups tablefile
 
         Parameters
         ----------
